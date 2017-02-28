@@ -5,7 +5,7 @@ A tool for executing dynamic query of redash.
 ## Install
 
 ```
-pip install git+https://github.com/toritori0318/redash-dynamic-query
+pip install git+https://github.com/328/redash-dynamic-query
 ```
 
 ## SYNOPSIS
@@ -15,7 +15,8 @@ from redash_dynamic_query import RedashDynamicQuery
 
 redash = RedashDynamicQuery(
     endpoint='http://myredash-host',
-    apikey='secret_apikey')
+    apikey='secret_apikey',
+    data_source_id=DB_number)
 
 query_id = 111
 bind = {
@@ -37,8 +38,8 @@ print result['query_result']['data']
 #    ]
 #}
 
+```
+
 ## LICENSE
 
 MIT
-
-```

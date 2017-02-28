@@ -2,9 +2,10 @@ import time
 import requests
 
 class RedashDynamicQuery():
-    def __init__(self, endpoint, apikey):
+    def __init__(self, endpoint, apikey, data_source_id):
         self.endpoint = endpoint
         self.apikey = apikey
+        self.data_source_id = data_source_id
 
     def query(self, query_id, bind=None):
         # get query body
@@ -27,7 +28,7 @@ class RedashDynamicQuery():
         return {
             "query": query_body,
             "query_id": query_id,
-            "data_source_id": 2, 
+            "data_source_id": self.data_source_id, 
             "max_age": 0,
         }
 
